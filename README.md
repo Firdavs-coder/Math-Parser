@@ -4,7 +4,7 @@
 2. https://www.wolframalpha.com/
 3. https://www.symbolab.com/
 
-'''
+
 """
 %2B = +
 %3D = =
@@ -178,4 +178,4 @@ if runSYMBOLAB == True:
         SymbolabFunction()
     except:
         print("Symbolab gave up!")
-'''
+
