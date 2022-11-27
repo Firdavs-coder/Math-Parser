@@ -5,24 +5,9 @@
 3. https://www.symbolab.com/
 
 
+
+## Setup basic codes
 ```
-"""
-%2B = +
-%3D = =
-%2F = /
-
-Symbolab:
-sin = /sin
-(=\left(
-)=\right)
-* = \cdot
-
-
-\=\frac{num}{denom}
-
-
-"""
-
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -43,8 +28,10 @@ runSYMBOLAB = True
 
 
 browser = webdriver.PhantomJS(executable_path='C:\\phantomjs-2.1.1-windows\\bin\\phantomjs.exe')
+```
 
-
+## Function for url format
+```
 def formaturlexpr(expr, urlbase, site):
     # sin(3*x)%2B4%3D4-5*pi
     if (site == "wolfram" or site == "cymath"):
@@ -67,12 +54,11 @@ def formaturlexpr(expr, urlbase, site):
         finalurl = urlbase + endurl
         # print(finalurl)
         return finalurl
+```
 
-
-
+## Function for WolframAlpha
+```
 site = "https://www.wolframalpha.com/input/?i="
-
-
 def WolframFunction():
     sitedemo = "https://www.wolframalpha.com/input/?i=sin(x)%3D24"
     site = formaturlexpr(uinput, "https://www.wolframalpha.com/input/?i=", "wolfram")
@@ -93,10 +79,11 @@ def WolframFunction():
     for item in imglist:
          # print(item.get_text())
          print(item['alt'])
+```
 
 
-
-
+## Function for Cymath
+```
 def CymathFunction():
     sitedemo = "https://www.cymath.com/answer?q=sin(x)%3D24"
     site = formaturlexpr(uinput, "https://www.cymath.com/answer?q=", "cymath")
@@ -128,9 +115,10 @@ def CymathFunction():
     hat4 = hat3.replace('PI', 'π')
     hiddenanswertext = hat4
     print(hiddenanswertext)
+```
 
-
-
+## Function for symbolab
+```
 def SymbolabFunction():
     sitedemo = "https://www.symbolab.com/solver/step-by-step/sin%5Cleft(x%5Cright)%3D24"
     site = "https://www.symbolab.com/solver/step-by-step/sin%5Cleft(x%5Cright)%3D24"
@@ -156,12 +144,12 @@ def SymbolabFunction():
     for item in solutionslist:
 
          print(item.get_text())
+```
 
 
 
-
-
-
+## Write together and Run code
+```
 if runWOLFRAM == True:
     try:
         WolframFunction()
