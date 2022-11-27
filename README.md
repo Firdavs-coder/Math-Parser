@@ -7,7 +7,7 @@
 
 
 ## Setup basic codes
-```
+```python
 import requests
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -31,7 +31,7 @@ browser = webdriver.PhantomJS(executable_path='C:\\phantomjs-2.1.1-windows\\bin\
 ```
 
 ## Function for url format
-```
+```python
 def formaturlexpr(expr, urlbase, site):
     # sin(3*x)%2B4%3D4-5*pi
     if (site == "wolfram" or site == "cymath"):
@@ -57,7 +57,7 @@ def formaturlexpr(expr, urlbase, site):
 ```
 
 ## Function for WolframAlpha
-```
+```python
 site = "https://www.wolframalpha.com/input/?i="
 def WolframFunction():
     sitedemo = "https://www.wolframalpha.com/input/?i=sin(x)%3D24"
@@ -83,7 +83,7 @@ def WolframFunction():
 
 
 ## Function for Cymath
-```
+```python
 def CymathFunction():
     sitedemo = "https://www.cymath.com/answer?q=sin(x)%3D24"
     site = formaturlexpr(uinput, "https://www.cymath.com/answer?q=", "cymath")
@@ -118,7 +118,7 @@ def CymathFunction():
 ```
 
 ## Function for symbolab
-```
+```python
 def SymbolabFunction():
     sitedemo = "https://www.symbolab.com/solver/step-by-step/sin%5Cleft(x%5Cright)%3D24"
     site = "https://www.symbolab.com/solver/step-by-step/sin%5Cleft(x%5Cright)%3D24"
@@ -149,7 +149,7 @@ def SymbolabFunction():
 
 
 ## Write together and Run code
-```
+```python
 if runWOLFRAM == True:
     try:
         WolframFunction()
